@@ -1,6 +1,6 @@
 "use strict";
 const { DataTypes } = require("sequelize");
-const tableName = "drivers";
+const tableName = "assigned_parcels";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable(tableName, {
@@ -10,53 +10,26 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      fk_user_id: {
+      fk_parcel_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      fk_client_id: {
+      fk_driver_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      full_name: {
+      parcel_name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      registration_number: {
+      driver_name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      make: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      model: {
-        type: DataTypes.STRING,
+      status: {
+        type: DataTypes.ENUM("Pending", "Done"),
+        defaultValue: "Pending",
         allowNull: false,
-      },
-      year: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      lincense_image_front_url: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      lincense_image_back_url: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      license_number: {
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
-      driving_miles: {
-        allowNull: false,
-        type: DataTypes.INTEGER,
-      },
-      clients_feedback: {
-        allowNull: true,
-        type: DataTypes.STRING,
       },
       createdAt: {
         allowNull: false,
