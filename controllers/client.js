@@ -1,5 +1,4 @@
 const { Parcels } = require("../models");
-const { Users } = require("../models");
 module.exports = {
   postParcel: async (req, res) => {
     try {
@@ -49,7 +48,7 @@ module.exports = {
   allParcels: async (req, res) => {
     try {
       let parcels = await Parcels.findAll();
-        return res.status(307).render("driverHomePage",  {parcels} );
+      return res.status(307).render("driverHomePage", { parcels });
     } catch (err) {
       console.log(err);
       return res
