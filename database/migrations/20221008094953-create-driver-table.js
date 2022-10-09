@@ -14,10 +14,6 @@ module.exports = {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      fk_client_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
       full_name: {
         type: DataTypes.STRING,
         allowNull: false,

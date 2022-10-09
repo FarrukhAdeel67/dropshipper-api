@@ -57,7 +57,6 @@ module.exports = {
         driving_miles: drivingMiles,
         clients_feedback: clientsFeedback,
         fk_user_id: user.id,
-        fk_client_id: 1,
       });
       return res.status(200).send({ driverProfile });
       //   return res.status(307).render("driverProfile" ,{driver})
