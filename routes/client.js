@@ -4,6 +4,7 @@ const router = Router();
 // Controllers
 const controller = require("../controllers/client");
 
+//Routes
 router.get("/", controller.allParcels);
 router.post("/postParcel", controller.postParcel);
 router.delete("/removeParcel", controller.removeParcel);
