@@ -153,7 +153,6 @@ const mailer = (email, otp) => {
       subject: "Hello World",
       text: "Hello World",
     });
-
     console.log(JSON.stringify(result, null, 4));
   }
 };
