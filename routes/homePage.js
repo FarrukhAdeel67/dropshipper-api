@@ -1,6 +1,5 @@
 const { Router } = require("express");
-const router = Router();
-
+const router = Router()
 //Routers
 const driverRouter = require("./driver");
 const clientRouter = require("./client");
