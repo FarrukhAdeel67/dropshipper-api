@@ -6,7 +6,6 @@ const controller = require("../controllers/driver");
 
 //image upload
 const multer = require("multer");
-const path = require("path");
 const upload = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
