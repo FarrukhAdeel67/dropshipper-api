@@ -7,14 +7,14 @@ const controller = require("../controllers/driver");
 //Image Upload
 const multer = require("multer");
 const upload = multer({
-    storage: multer.diskStorage({
-        destination: function(req, file, cb) {
-            cb(null, "uploads");
-        },
-        filename: function(req, file, cb) {
-            cb(null, file.fieldname + "-" + Date.now() + ".jpg");
-        },
-    }),
+  storage: multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "uploads");
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + "-" + Date.now() + ".jpg");
+    },
+  }),
 }).array("licence_images");
 
 router.post("/pickParcel", controller.selectParcel);
@@ -23,8 +23,8 @@ router.post("/", controller.createDriver);
 router.get("/", controller.allPosts);
 router.get("/driverProfile", controller.driverProfile);
 router.post(
-    "/driverProfile/uploadLicenseImages",
-    upload,
-    controller.profilePost
+  "/driverProfile/uploadLicenseImages",
+  upload,
+  controller.profilePost
 );
 module.exports = router;
